@@ -1,0 +1,79 @@
+<xml>
+
+<models>
+    <model name="lines">
+        <segment name="lines" >
+            <vertexParam name="verticesConf" dynamic="True" />
+
+            <material name="LinesMaterial" />
+        </segment>
+    </model>
+
+    <model name="points">
+        <segment name="points" >
+            <vertexParam name="verticesConf" dynamic="True" />
+
+            <material name="PointsMaterial" />
+        </segment>
+    </model>
+</models>
+
+<materials>
+    <material name="PointsMaterial">
+        <state name="matDiffuse" type="floatTuple" val="(0.67, 0.67, 0.67, 1.0)" />
+        <state name="matSpecular" type="floatTuple" val="(1.0, 1.0, 1.0, 1.0)" />
+        <state name="matAmbient" type="float" val="0.0" />
+        <state name="matShininess" type="float" val="50" />
+        <state name="matColor" type="floatTuple" val="(1.0, 1.0, 1.0, 1.0)" />
+    </material>
+
+    <material name="LinesMaterial">
+        <state name="matDiffuse" type="floatTuple" val="(0.67, 0.67, 0.67, 1.0)" />
+        <state name="matSpecular" type="floatTuple" val="(1.0, 1.0, 1.0, 1.0)" />
+        <state name="matAmbient" type="float" val="0.0" />
+        <state name="matShininess" type="float" val="50" />
+        <state name="matColor" type="floatTuple" val="(1.0, 0.0, 0.0, 1.0)" />
+    </material>
+</materials>
+
+<segments>
+    <segment name="points" >
+        <vertices>
+            <v index="0" co="[-2.0, -2.0,  2.0]" />
+            <v index="1" co="[ 2.0, -2.0,  2.0]" />
+            <v index="2" co="[ 2.0,  2.0,  2.0]" />
+            <v index="3" co="[-2.0,  2.0,  2.0]" />
+        </vertices>
+        <faces primitive="Points" >
+            <face>
+                <state name="pointSize" type="float" val="2.0" />
+                
+                <i val="[0, 1, 2, 3, 4]" />
+            </face>
+        </faces>
+    </segment>
+
+    <segment name="lines" >
+        <vertices>
+            <v index="0" co="[-1.0, -1.0,  1.0]" />
+            <v index="1" co="[ 1.0, -1.0,  1.0]" />
+            <v index="2" co="[ 1.0,  1.0,  1.0]" />
+            <v index="3" co="[-1.0,  1.0,  1.0]" />
+            <v index="4" co="[-1.0, -1.0, -1.0]" />
+            <v index="5" co="[ 1.0, -1.0, -1.0]" />
+            <v index="6" co="[ 1.0,  1.0, -1.0]" />
+            <v index="7" co="[-1.0,  1.0, -1.0]" />
+        </vertices>
+        <faces primitive="LineStrip" >
+            <face>
+                <state name="lineWidth" type="float" val="2.5" />
+                <state name="lineStipple" type="intTuple" val="(1,0x4444)" />
+
+                <i val="[0, 1, 2, 3, 4, 5, 6, 7]" />
+            </face>
+        </faces>
+    </segment>
+</segments>
+
+</xml>
+
